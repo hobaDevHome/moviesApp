@@ -13,8 +13,21 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import Box from "@mui/material/Box";
 
+const movie = {
+  Title: "Lion",
+  Year: "2016",
+  Rated: "PG-13",
+  Runtime: "118 min",
+  Genre: "Biography, Drama",
+  Director: "Garth Davis",
+  Actors: "Dev Patel, Nicole Kidman, Rooney Mara",
+  Plot: "A five-year-old Indian boy is adopted by an Australian couple after getting lost hundreds of kilometers from home. 25 years later, he sets out to find his lost family.",
+  Poster:
+    "https://m.media-amazon.com/images/M/MV5BMjA3NjkzNjg2MF5BMl5BanBnXkFtZTgwMDkyMzgzMDI@._V1_SX300.jpg",
+};
+
 // eslint-disable-next-line react/prop-types
-const Hero = ({ movie }) => {
+const Hero = () => {
   return (
     <>
       <div
@@ -56,7 +69,7 @@ const Hero = ({ movie }) => {
               width={100}
               sx={{
                 fontWeight: 900,
-                color: "white",
+                color: colors.white,
                 fontSize: 40,
                 fontFamily: "Fraunces",
               }}
@@ -81,7 +94,7 @@ const Hero = ({ movie }) => {
                 }}
               >
                 <CalendarMonthIcon
-                  style={{ fontSize: 20, color: "#a45bf5", marginRight: 5 }}
+                  style={{ fontSize: 20, color: colors.purple, marginRight: 5 }}
                 />
                 <p>{movie.Year}</p>
               </div>
@@ -94,7 +107,7 @@ const Hero = ({ movie }) => {
                 }}
               >
                 <AccessAlarmIcon
-                  style={{ fontSize: 20, color: "#a45bf5", marginRight: 5 }}
+                  style={{ fontSize: 20, color: colors.purple, marginRight: 5 }}
                 />
                 <p>{movie.Runtime}</p>
               </div>
@@ -128,7 +141,7 @@ const Hero = ({ movie }) => {
               <div
                 style={{
                   fontSize: 14,
-                  color: "white",
+                  color: colors.white,
                   border: "1px solid white",
                   padding: 3,
                 }}

@@ -8,6 +8,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { colors } from "../constants";
 const pages = ["Products", "Services", "ABoutUs", "ContactUs"];
 const DrawerComp = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -30,10 +31,10 @@ const DrawerComp = () => {
         </List>
       </Drawer>
       <IconButton
-        sx={{ color: "white", marginLeft: "auto" }}
+        sx={{ color: colors.white, marginLeft: "auto" }}
         onClick={() => setOpenDrawer(!openDrawer)}
       >
-        <MenuIcon sx={{ color: "white" }} />
+        <MenuIcon sx={{ color: colors.white }} />
       </IconButton>
     </React.Fragment>
   );

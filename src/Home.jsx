@@ -11,54 +11,42 @@ import axios from "axios";
 import { colors } from "./constants";
 import Gallery from "./components/Gallery";
 import CircularProgress from "@mui/material/CircularProgress";
-import { useLoaderData } from "react-router-dom";
 
-const movie = {
-  Title: "Lion",
-  Year: "2016",
-  Rated: "PG-13",
-  Runtime: "118 min",
-  Genre: "Biography, Drama",
-  Director: "Garth Davis",
-  Actors: "Dev Patel, Nicole Kidman, Rooney Mara",
-  Plot: "A five-year-old Indian boy is adopted by an Australian couple after getting lost hundreds of kilometers from home. 25 years later, he sets out to find his lost family.",
-  Poster:
-    "https://m.media-amazon.com/images/M/MV5BMjA3NjkzNjg2MF5BMl5BanBnXkFtZTgwMDkyMzgzMDI@._V1_SX300.jpg",
-};
+const apiKey = "18a85a90";
 
 function Home() {
   const [movieList, setMovieList] = useState([]);
   const [searchPharase, setSearchPhrase] = useState("");
   const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    // const fetchMovies = async () => {
-    //   const { data } = await axios.get(
-    //     `http://www.omdbapi.com/?s=${searchPharase}&apikey=18a85a90&page=10`
-    //   );
-    //   console.log("response.data1", data.Search);
-    //   setMovieList( data.Search);
-    // };
-
-    setLoading(true);
-    axios
-      .get(`http://www.omdbapi.com/?s=${searchPharase}&apikey=18a85a90&page=10`)
-      .then((response) => {
-        console.log("response.data1", response.data.Search);
-        setMovieList(response.data.Search);
-        setLoading(false); // Set loading to false after fetching data
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false); // Set loading to false in case of an error
-      });
-
-    // fetchMovies();
+    if (searchPharase === "") {
+      setMsg("enter a movie title to search for");
+    } else {
+      setMsg("");
+      setLoading(true);
+      axios
+        .get(
+          `http://www.omdbapi.com/?s=${searchPharase}&apikey=${apiKey}&page=10`
+        )
+        .then((response) => {
+          setMovieList(response.data.Search);
+          setLoading(false);
+          if (!response.data.Search || response.data.Search.length == 0) {
+            setMsg("No results found");
+          } else {
+            setMsg("");
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setLoading(false); // Set loading to false in case of an error
+        });
+    }
   }, [searchPharase]);
 
-  console.log("loading", loading);
   const handleSearch = (e) => {
-    console.log("searchPharase", searchPharase);
     setSearchPhrase(e);
   };
 
@@ -73,19 +61,17 @@ function Home() {
       }}
     >
       <Navbar />
-      <Hero movie={movie} />
+      <Hero />
       <Input handleSearch={handleSearch} />
       {loading ? (
         <CircularProgress style={{ marginTop: 20 }} />
       ) : (
         <>
-          {!movieList || (movieList && movieList.length === 0) ? (
-            <div style={{ color: colors.white }}>
-              <p>Nothing found</p>
-            </div>
-          ) : (
-            <Gallery moviesList={movieList} />
-          )}
+          <div style={{ color: colors.white }}>
+            <p>{msg}</p>
+          </div>
+
+          <Gallery moviesList={movieList} />
         </>
       )}
     </div>

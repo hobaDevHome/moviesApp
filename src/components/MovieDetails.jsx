@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Navbar from "./Navbar";
+
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -79,11 +79,11 @@ const MovieDetails = () => {
           }}
         >
           <Link to="/">
-            <div style={{ cursor: "pointer", color: "white" }}>
+            <div style={{ cursor: "pointer", color: colors.white }}>
               <LowPriorityIcon
                 style={{
                   fontSize: 40,
-                  color: "#ffffff",
+                  color: colors.white,
                   marginRight: 5,
                   marginTop: 5,
                 }}
@@ -166,7 +166,7 @@ const MovieDetails = () => {
                   display: "flex",
                   flexDirection: "row",
                   fontSize: 12,
-                  color: "white",
+                  color: colors.white,
                   marginTop: 10,
                 }}
               >
@@ -179,7 +179,11 @@ const MovieDetails = () => {
                   }}
                 >
                   <CalendarMonthIcon
-                    style={{ fontSize: 20, color: "#a45bf5", marginRight: 5 }}
+                    style={{
+                      fontSize: 20,
+                      color: colors.purple,
+                      marginRight: 5,
+                    }}
                   />
                   <p>{movie.Year}</p>
                 </div>
@@ -205,7 +209,11 @@ const MovieDetails = () => {
                   }}
                 >
                   <ConfirmationNumberIcon
-                    style={{ fontSize: 20, color: "#a45bf5", marginRight: 5 }}
+                    style={{
+                      fontSize: 20,
+                      color: colors.purple,
+                      marginRight: 5,
+                    }}
                   />
                   <p>{movie.Genre}</p>
                 </div>
@@ -237,14 +245,14 @@ const MovieDetails = () => {
                 <CustomTabPanel
                   value={value}
                   index={0}
-                  style={{ color: "white" }}
+                  style={{ color: colors.white }}
                 >
                   {movie.Plot}
                 </CustomTabPanel>
                 <CustomTabPanel
                   value={value}
                   index={1}
-                  style={{ color: "white" }}
+                  style={{ color: colors.white }}
                 >
                   {movie.Ratings.map((e, i) => {
                     return (
@@ -257,7 +265,7 @@ const MovieDetails = () => {
                 <CustomTabPanel
                   value={value}
                   index={2}
-                  style={{ color: "white" }}
+                  style={{ color: colors.white }}
                 >
                   {movie.Actors}
                 </CustomTabPanel>

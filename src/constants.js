@@ -16,6 +16,8 @@ export const colors = {
   greenBg: "#0f4605",
   white: "#fff",
   greyBG: "#242a32",
+  purple: "#a45bf5",
+  appbarBG: "#181818",
 };
 
 export const clientsTestimonials = [

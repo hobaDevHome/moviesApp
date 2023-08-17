@@ -1,13 +1,13 @@
 Requirements:
 
-- Implement a search feature that allows users to input a movie title and retrieve a list of movies that match the search query.
-- Display the search results in a responsive user interface that adjusts to different screen sizes, 
-- For each movie in the search results, present the movie title, poster image, release year, and any other relevant information you consider important.
-- When a user clicks on a movie from the search results, display additional details about the selected movie, including the plot summary, director, actors, and IMDb rating.
+
+
+
+
 - Bonus: If the API supports it, incorporate pagination or infinite scrolling for the search results.
 - Bonus: Optimize performance and reduce API requests by implementing caching to store previously fetched movie data locally.
-- Bonus: Integrate additional features or enhancements that you believe would enhance the application.
-- Utilize a public movie API, such as the Open Movie Database (OMDb) API (http://www.omdbapi.com/), or any other similar API of your choice.
+
+
 api key = 18a85a90
 
 
@@ -23,16 +23,18 @@ TODO
 3- Search feature //
 4- details routing // done
 2- API fetch // done
+7- error handling // 
 
 
-
+8- local storage
+upload
+readme
 5- pagination
 6- caching
-7- error handling
+9-  move all colore to colors object
+10- move classes to modules
 
 
-/ move all colore to colors object
-// move classes to modules
 
 sample movie object
 {

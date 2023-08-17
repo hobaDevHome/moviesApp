@@ -16,6 +16,7 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 
 import MenuItem from "@mui/material/MenuItem";
+import { colors } from "../constants";
 
 const pages = ["Home", "movies", "what's new"];
 
@@ -34,7 +35,7 @@ function ResponsiveAppBar() {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "#181818",
+        backgroundColor: colors.appbarBG,
         paddingTop: 3,
       }}
     >
@@ -57,7 +58,7 @@ function ResponsiveAppBar() {
                   fontFamily: "Fraunces",
                   fontWeight: 900,
                   fontSize: 25,
-                  color: "white",
+                  color: colors.white,
                   textDecoration: "none",
                 }}
               >
@@ -81,7 +82,7 @@ function ResponsiveAppBar() {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 2, color: colors.white, display: "block" }}
                 >
                   {page}
                 </Button>

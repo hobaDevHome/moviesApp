@@ -1,6 +1,6 @@
-#  sunnydays: Graphic Design Company Landing Page
+#  Movie Explorer App
 
-This is a side project showcasing a landing page for a graphic design company. The application fetches color-based images from a database and utilizes various technologies like React, Material-UI (MUI), Firebase Storage, and Redux Toolkit.
+The Movie Explorer App is a dynamic React application designed to effortlessly search and explore a vast movie database. Seamlessly discover movies by name, access essential details like ratings and release years. 
 
 ## Demo
 
@@ -8,13 +8,13 @@ You can check out the live demo of the project [here](https://sunnydayscolors.ne
 
 ## Features
 
-- Landing page with a modern and visually appealing design.
-- Fetches color-based images from a database (Firebase Storage).
+- Search Functionality: Seamlessly find your favorite movies by typing their names in the search bar.
+- Detailed Movie Pages: Get in-depth information about each movie, including plot summaries, cast, and more..
 - Responsive layout for optimal viewing on different devices.
 
 ## Technologies Used
 
-- React - Material-UI (MUI)-  Firebase Storage - Redux Toolkit for state management and middleware.
+- React - Material-UI (MUI)-  RestAPI's .
 
 ![alt text](https://github.com/hobaDevHome/coloredImages/blob/master/public/images/overview1.jpg)
 

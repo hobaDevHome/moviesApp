@@ -25,7 +25,7 @@ const Gallery = ({ moviesList = [] }) => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
+              alignItems: "start",
             }}
           >
             <MovieCard movie={e} />
