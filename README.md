@@ -1,10 +1,10 @@
-#  Movie Explorer App
+# Movie Explorer App
 
-The Movie Explorer App is a dynamic React application designed to effortlessly search and explore a vast movie database. Seamlessly discover movies by name, access essential details like ratings and release years. 
+The Movie Explorer App is a dynamic React application designed to effortlessly search and explore a vast movie database. Seamlessly discover movies by name, access essential details like ratings and release years.
 
 ## Demo
 
-You can check out the live demo of the project [here](https://sunnydayscolors.netlify.app/).
+You can check out the live demo of the project [here](https://movisearchapp.netlify.app/).
 
 ## Features
 
@@ -14,10 +14,8 @@ You can check out the live demo of the project [here](https://sunnydayscolors.ne
 
 ## Technologies Used
 
-- React - Material-UI (MUI)-  RestAPI's .
+- React - Material-UI (MUI)- RestAPI's .
 
 ![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/sc.png)
 
 ![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/scm.png)
-
-
