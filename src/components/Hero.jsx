@@ -6,6 +6,7 @@ import { colors } from "../constants";
 import background from "../../public/images/lion2.jpg";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import { useEffect } from "react";
 
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
@@ -13,7 +14,7 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import Box from "@mui/material/Box";
 
-const movie = {
+let movie = {
   Title: "Lion",
   Year: "2016",
   Rated: "PG-13",

@@ -12,7 +12,7 @@ const Input = ({ handleSearch }) => {
   return (
     <div
       style={{
-        width: "80%",
+        width: "100%",
         alignSelf: "center",
         display: "flex",
         flexDirection: "row",
