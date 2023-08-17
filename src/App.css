@@ -30,7 +30,7 @@ body {
   padding: 5px 10px;
   outline: none;
   cursor: pointer;
-  border-radius: 20px !important;
+
   margin-left: 8px;
 }
 .pagination > .active > a,

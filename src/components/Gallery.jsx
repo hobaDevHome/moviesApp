@@ -19,6 +19,7 @@ const Gallery = () => {
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [msg, setMsg] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
 
   const getMovies = (page = 1) => {
     if (searchPharase === "") {
@@ -47,7 +48,9 @@ const Gallery = () => {
     }
   };
   useEffect(() => {
-    getMovies();
+    setPage(1);
+    getMovies(1);
+    setCurrentPage(0);
   }, [searchPharase]);
 
   const handleSearch = (e) => {
@@ -56,49 +59,31 @@ const Gallery = () => {
   const handlePageClick = (e) => {
     console.log(e.selected);
     getMovies(e.selected + 1);
+    setCurrentPage(e.selected + 1);
   };
   return (
     <Grid container item xs={12} padding={1}>
-      <Grid item xs={12} padding={1}>
+      <Grid
+        item
+        xs={12}
+        padding={1}
+        justifyContent="center"
+        alignItems="center"
+        display="flex"
+        flexDirection="column"
+      >
         <Input handleSearch={handleSearch} />
+        <div style={{ color: colors.white }}>
+          <p>{msg}</p>
+        </div>
       </Grid>
-
-      {loading ? (
-        <CircularProgress style={{ marginTop: 20 }} />
-      ) : (
-        <>
-          <div style={{ color: colors.white }}>
-            <p>{msg}</p>
-          </div>
-
-          {movieList.map((e) => {
-            return (
-              <Grid
-                key={e.imdbID}
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={3}
-                marginTop={2}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "start",
-                }}
-              >
-                <MovieCard movie={e} />
-              </Grid>
-            );
-          })}
-        </>
-      )}
       {total > 10 && (
         <Grid item xs={12} padding={1}>
           <div className="paginate">
             <ReactPaginate
-              previousLabel={"Back"}
-              nextLabel={"Next"}
+              forcePage={currentPage}
+              previousLabel={"<"}
+              nextLabel={">"}
               breakLabel={".."}
               breakClassName={"break-me"}
               pageCount={total}
@@ -111,6 +96,43 @@ const Gallery = () => {
             />
           </div>
         </Grid>
+      )}
+      {loading ? (
+        <Grid
+          item
+          xs={12}
+          padding={1}
+          justifyContent="center"
+          alignItems="center"
+          display="flex"
+          flexDirection="column"
+        >
+          <CircularProgress />
+        </Grid>
+      ) : (
+        <>
+          {movieList &&
+            movieList.map((e) => {
+              return (
+                <Grid
+                  key={e.imdbID}
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={3}
+                  marginTop={2}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "start",
+                  }}
+                >
+                  <MovieCard movie={e} />
+                </Grid>
+              );
+            })}
+        </>
       )}
     </Grid>
   );
