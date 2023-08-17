@@ -93,23 +93,25 @@ const Gallery = () => {
           })}
         </>
       )}
-      <Grid item xs={12} padding={1}>
-        <div className="paginate">
-          <ReactPaginate
-            previousLabel={"Back"}
-            nextLabel={"Next"}
-            breakLabel={"..."}
-            breakClassName={"break-me"}
-            pageCount={total}
-            marginPagesDisplayed={1}
-            pageRangeDisplayed={4}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            subContainerClassName={"pages pagination"}
-            activeClassName={"active"}
-          />
-        </div>
-      </Grid>
+      {total > 10 && (
+        <Grid item xs={12} padding={1}>
+          <div className="paginate">
+            <ReactPaginate
+              previousLabel={"Back"}
+              nextLabel={"Next"}
+              breakLabel={".."}
+              breakClassName={"break-me"}
+              pageCount={total}
+              marginPagesDisplayed={1}
+              pageRangeDisplayed={4}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              subContainerClassName={"pages pagination"}
+              activeClassName={"active"}
+            />
+          </div>
+        </Grid>
+      )}
     </Grid>
   );
 };
