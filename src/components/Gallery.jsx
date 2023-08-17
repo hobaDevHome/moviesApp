@@ -29,7 +29,7 @@ const Gallery = () => {
       setLoading(true);
       axios
         .get(
-          `http://www.omdbapi.com/?s=${searchPharase}&apikey=${apiKey}&page=${page}`
+          `http://www.omdbapi.com/?s=${searchPharase}&apikey=${apiKey}&page=${page}/`
         )
         .then((response) => {
           setMovieList(response.data.Search);
