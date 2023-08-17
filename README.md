@@ -16,8 +16,8 @@ You can check out the live demo of the project [here](https://sunnydayscolors.ne
 
 - React - Material-UI (MUI)-  RestAPI's .
 
-![alt text](https://github.com/hobaDevHome/coloredImages/blob/master/public/images/overview1.jpg)
+![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/sc.png)
 
-![alt text](https://github.com/hobaDevHome/coloredImages/blob/master/public/images/overview2.jpg)
+![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/scm.png)
 
-![alt text](https://github.com/hobaDevHome/coloredImages/blob/master/public/images/projectOverview.gif)
+
