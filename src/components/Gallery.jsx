@@ -29,7 +29,7 @@ const Gallery = () => {
       setLoading(true);
       axios
         .get(
-          `http://www.omdbapi.com/?s=${searchPharase}&apikey=${apiKey}&page=${page}/`
+          `http://www.omdbapi.com/?s=${searchPharase}&apikey=${apiKey}&page=${page}`
         )
         .then((response) => {
           setMovieList(response.data.Search);
@@ -50,6 +50,7 @@ const Gallery = () => {
   useEffect(() => {
     setPage(1);
     getMovies(1);
+
     setCurrentPage(0);
   }, [searchPharase]);
 
@@ -59,8 +60,11 @@ const Gallery = () => {
   const handlePageClick = (e) => {
     console.log(e.selected);
     getMovies(e.selected + 1);
-    setCurrentPage(e.selected + 1);
+    setPage(e.selected + 1);
+
+    setCurrentPage(e.selected);
   };
+  console.log("page", page);
   return (
     <Grid container item xs={12} padding={1}>
       <Grid
