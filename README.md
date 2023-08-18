@@ -14,9 +14,9 @@ You can check out the live demo of the project [here](https://movisearchapp.netl
 
 ## Technologies Used
 
-- React - Material-UI (MUI)- RestAPI's .
+- React - Material-UI (MUI)- RestAPI's - Redux Toolkit - Redux Thunk.
 
 ![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/sc.png)
 
 ![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/scm.png)
-![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/projectOverview.gif)
+![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/projectOverview2.gif)
