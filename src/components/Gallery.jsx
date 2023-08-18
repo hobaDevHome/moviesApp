@@ -4,7 +4,7 @@
 import Grid from "@mui/material/Grid";
 import MovieCard from "./MovieCard";
 import Input from "./Input";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchMovies,
@@ -32,7 +32,7 @@ const Gallery = () => {
   const error = useSelector(selectError);
   const totalMovies = useSelector(selectTotal);
 
-  const getMovies = (page = 1) => {
+  const getMovies = useCallback((page = 1) => {
     if (searchPharase === "") {
       setMsg("");
     } else {
@@ -51,7 +51,7 @@ const Gallery = () => {
       console.log("error", error);
       console.log("total movies", totalMovies);
     }
-  };
+  });
   useEffect(() => {
     setCurrentPage(0);
     getMovies(1);
