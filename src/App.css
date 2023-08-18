@@ -53,3 +53,35 @@ body {
 .pagination > li:last-child > span {
   border-radius: unset;
 }
+
+.carousel-item {
+  position: relative;
+  text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: #181818;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}

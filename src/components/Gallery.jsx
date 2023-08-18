@@ -58,13 +58,13 @@ const Gallery = () => {
     setSearchPhrase(e);
   };
   const handlePageClick = (e) => {
-    console.log(e.selected);
+    // console.log(e.selected);
     getMovies(e.selected + 1);
     setPage(e.selected + 1);
 
     setCurrentPage(e.selected);
   };
-  console.log("page", page);
+  // console.log("page", page);
   return (
     <Grid container item xs={12} padding={1}>
       <Grid
@@ -81,26 +81,7 @@ const Gallery = () => {
           <p>{msg}</p>
         </div>
       </Grid>
-      {total > 10 && (
-        <Grid item xs={12} padding={1}>
-          <div className="paginate">
-            <ReactPaginate
-              forcePage={currentPage}
-              previousLabel={"<"}
-              nextLabel={">"}
-              breakLabel={".."}
-              breakClassName={"break-me"}
-              pageCount={total}
-              marginPagesDisplayed={1}
-              pageRangeDisplayed={4}
-              onPageChange={handlePageClick}
-              containerClassName={"pagination"}
-              subContainerClassName={"pages pagination"}
-              activeClassName={"active"}
-            />
-          </div>
-        </Grid>
-      )}
+
       {loading ? (
         <Grid
           item
@@ -137,6 +118,26 @@ const Gallery = () => {
               );
             })}
         </>
+      )}
+      {total > 10 && (
+        <Grid item xs={12} padding={1}>
+          <div className="paginate">
+            <ReactPaginate
+              forcePage={currentPage}
+              previousLabel={"<"}
+              nextLabel={">"}
+              breakLabel={".."}
+              breakClassName={"break-me"}
+              pageCount={total}
+              marginPagesDisplayed={1}
+              pageRangeDisplayed={4}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              subContainerClassName={"pages pagination"}
+              activeClassName={"active"}
+            />
+          </div>
+        </Grid>
       )}
     </Grid>
   );

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { colors } from "../constants";
@@ -19,6 +20,7 @@ const MovieCard = ({ movie }) => {
             borderRadius: 8,
             boxShadow: "3px 3px 5px #140c11",
             width: 260,
+            position: "relative",
           }}
         >
           <img
@@ -30,16 +32,29 @@ const MovieCard = ({ movie }) => {
               objectFit: "cover",
               display: "block",
               borderRadius: 8,
+              position: "relative",
             }}
           />
-          <p
+          <div
             style={{
-              alignSelf: "start",
-              margin: 5,
+              position: "absolute",
+              top: 35,
+              left: 15,
+              width: 200,
+              borderRadius: 5,
+              backgroundColor: colors.titleBg,
             }}
           >
-            {movie.Title}
-          </p>
+            <p
+              style={{
+                alignSelf: "start",
+                margin: 5,
+              }}
+            >
+              {movie.Title}
+            </p>
+          </div>
+
           <div
             style={{
               display: "flex",
@@ -47,12 +62,17 @@ const MovieCard = ({ movie }) => {
               alignItems: "center",
 
               alignSelf: "start",
-              margin: 0,
+              margin: 10,
               padding: 0,
             }}
           >
             <CalendarMonthIcon
-              style={{ fontSize: 20, color: colors.purple, marginRight: 5 }}
+              style={{
+                fontSize: 20,
+                color: colors.purple,
+
+                marginRight: 5,
+              }}
             />
             <p
               style={{

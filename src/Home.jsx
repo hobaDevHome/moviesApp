@@ -2,10 +2,8 @@
 // @ts-nocheck
 
 import Navbar from "./components/Navbar";
-
-import Hero from "./components/Hero";
-
 import Gallery from "./components/Gallery";
+import ImagesSlider from "./components/ImagesSlider";
 
 function Home() {
   return (
@@ -19,7 +17,7 @@ function Home() {
       }}
     >
       <Navbar />
-      <Hero />
+      <ImagesSlider />
 
       <Gallery />
     </div>

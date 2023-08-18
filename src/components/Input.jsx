@@ -30,16 +30,14 @@ const Input = ({ handleSearch }) => {
         }}
         sx={{
           "paddingRight": 1,
-          "& .MuiInputLabel-root": { color: "white" },
-          "& .MuiOutlinedInput-root": {
-            "& > fieldset": { borderColor: "white" },
-          },
+          "& .MuiInputLabel-root": { color: "orange" },
+
           "& .MuiOutlinedInput-root.Mui-focused": {
             "& > fieldset": {
               borderColor: "orange",
             },
           },
-          "& .MuiInputBase-input": { color: "white" },
+          "& .MuiInputBase-input": { color: "orange" },
         }}
         fullWidth
         id="outlined-basic"
