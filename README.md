@@ -19,3 +19,4 @@ You can check out the live demo of the project [here](https://movisearchapp.netl
 ![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/sc.png)
 
 ![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/scm.png)
+![alt text](https://github.com/hobaDevHome/moviesApp/blob/master/public/images/projectOverview.gif)
