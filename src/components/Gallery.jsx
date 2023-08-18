@@ -22,10 +22,7 @@ const apiKey = "18a85a90";
 
 const Gallery = () => {
   const [searchPharase, setSearchPhrase] = useState("");
-  const [movieList, setMovieList] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
-  const [total, setTotal] = useState(0);
+
   const [msg, setMsg] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -47,40 +44,31 @@ const Gallery = () => {
 
       if (status === "failed") {
         setMsg(error);
-        setLoading(false);
       }
 
-      if (movies) {
-        setMovieList(movies);
-        setLoading(false);
-        setTotal(totalMovies);
-        if (movies.length == 0) {
-          setMsg("No results found");
-        } else {
-          setMsg("");
-        }
-      }
+      console.log("movies", movies);
+      console.log("status", status);
+      console.log("error", error);
+      console.log("total movies", totalMovies);
     }
   };
   useEffect(() => {
-    setPage(1);
     setCurrentPage(0);
     getMovies(1);
   }, [searchPharase, dispatch]);
 
   const handleSearch = (e) => {
     setSearchPhrase(e);
-    setPage(1);
+
     setCurrentPage(0);
     getMovies(1);
   };
   const handlePageClick = (e) => {
     getMovies(e.selected + 1);
-    setPage(e.selected + 1);
+
     setCurrentPage(e.selected);
   };
 
-  console.log("loading", status);
   return (
     <Grid container item xs={12} padding={1}>
       <Grid
@@ -112,7 +100,7 @@ const Gallery = () => {
         </Grid>
       ) : (
         <>
-          {movies > 0 &&
+          {movies && movies.length > 0 ? (
             movies.map((e) => {
               return (
                 <Grid
@@ -132,10 +120,15 @@ const Gallery = () => {
                   <MovieCard movie={e} />
                 </Grid>
               );
-            })}
+            })
+          ) : (
+            <div style={{ color: colors.white }}>
+              <p>No results found </p>
+            </div>
+          )}
         </>
       )}
-      {total > 10 && (
+      {totalMovies > 10 && (
         <Grid item xs={12} padding={1}>
           <div className="paginate">
             <ReactPaginate
@@ -144,7 +137,7 @@ const Gallery = () => {
               nextLabel={">"}
               breakLabel={".."}
               breakClassName={"break-me"}
-              pageCount={total}
+              pageCount={totalMovies}
               marginPagesDisplayed={1}
               pageRangeDisplayed={4}
               onPageChange={handlePageClick}
