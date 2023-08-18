@@ -38,6 +38,17 @@ const Input = ({ handleSearch }) => {
             },
           },
           "& .MuiInputBase-input": { color: "orange" },
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "orange",
+            },
+            "&:hover fieldset": {
+              borderColor: "orange",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "orange",
+            },
+          },
         }}
         fullWidth
         id="outlined-basic"

@@ -5,7 +5,15 @@ import Grid from "@mui/material/Grid";
 import MovieCard from "./MovieCard";
 import Input from "./Input";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchMovies,
+  selectMovies,
+  selectStatus,
+  selectError,
+  selectTotal,
+} from "../store/movieSlice";
+
 import { colors } from "../constants";
 import CircularProgress from "@mui/material/CircularProgress";
 import ReactPaginate from "https://cdn.skypack.dev/react-paginate@7.1.0";
@@ -21,50 +29,58 @@ const Gallery = () => {
   const [msg, setMsg] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
 
+  const dispatch = useDispatch();
+  const movies = useSelector(selectMovies);
+  const status = useSelector(selectStatus);
+  const error = useSelector(selectError);
+  const totalMovies = useSelector(selectTotal);
+
   const getMovies = (page = 1) => {
     if (searchPharase === "") {
-      setMsg("enter a movie title to search for");
+      setMsg("");
     } else {
       setMsg("");
-      setLoading(true);
-      axios
-        .get(
-          `http://www.omdbapi.com/?s=${searchPharase}&apikey=${apiKey}&page=${page}`
-        )
-        .then((response) => {
-          setMovieList(response.data.Search);
-          setLoading(false);
-          setTotal(Math.ceil(response.data.totalResults / 10));
-          if (!response.data.Search || response.data.Search.length == 0) {
-            setMsg("No results found");
-          } else {
-            setMsg("");
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-          setLoading(false); // Set loading to false in case of an error
-        });
+
+      let query = `http://www.omdbapi.com/?s=${searchPharase}&apikey=${apiKey}&page=${page}`;
+
+      dispatch(fetchMovies(query));
+
+      if (status === "failed") {
+        setMsg(error);
+        setLoading(false);
+      }
+
+      if (movies) {
+        setMovieList(movies);
+        setLoading(false);
+        setTotal(totalMovies);
+        if (movies.length == 0) {
+          setMsg("No results found");
+        } else {
+          setMsg("");
+        }
+      }
     }
   };
   useEffect(() => {
     setPage(1);
-    getMovies(1);
-
     setCurrentPage(0);
-  }, [searchPharase]);
+    getMovies(1);
+  }, [searchPharase, dispatch]);
 
   const handleSearch = (e) => {
     setSearchPhrase(e);
+    setPage(1);
+    setCurrentPage(0);
+    getMovies(1);
   };
   const handlePageClick = (e) => {
-    // console.log(e.selected);
     getMovies(e.selected + 1);
     setPage(e.selected + 1);
-
     setCurrentPage(e.selected);
   };
-  // console.log("page", page);
+
+  console.log("loading", status);
   return (
     <Grid container item xs={12} padding={1}>
       <Grid
@@ -82,7 +98,7 @@ const Gallery = () => {
         </div>
       </Grid>
 
-      {loading ? (
+      {status === "loading" ? (
         <Grid
           item
           xs={12}
@@ -96,8 +112,8 @@ const Gallery = () => {
         </Grid>
       ) : (
         <>
-          {movieList &&
-            movieList.map((e) => {
+          {movies > 0 &&
+            movies.map((e) => {
               return (
                 <Grid
                   key={e.imdbID}
