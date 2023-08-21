@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-no-target-blank */
-// @ts-nocheck
-
 import Navbar from "./components/Navbar";
 import Gallery from "./components/Gallery";
 import ImagesSlider from "./components/ImagesSlider";

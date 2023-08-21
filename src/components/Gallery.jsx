@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 // @ts-nocheck
 import Grid from "@mui/material/Grid";
 import MovieCard from "./MovieCard";
@@ -45,11 +43,6 @@ const Gallery = () => {
       if (status === "failed") {
         setMsg(error);
       }
-
-      console.log("movies", movies);
-      console.log("status", status);
-      console.log("error", error);
-      console.log("total movies", totalMovies);
     }
   });
   useEffect(() => {

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import img1 from "../../public/images/lion2.jpg";
 import img2 from "../../public/images/home.jpg";
 import img3 from "../../public/images/inout.jpg";
@@ -83,8 +82,9 @@ const ImagesSlider = () => {
       prevIndex === movies.length - 1 ? 0 : prevIndex + 1
     );
   };
+
   const currentSlide = movies[currentIndex];
-  console.log("currentslide", currentSlide);
+
   return (
     <div style={{ width: "100%", height: 540 }}>
       <div>

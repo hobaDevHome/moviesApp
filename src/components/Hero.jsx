@@ -1,7 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-// @ts-nocheck
-
 import { colors } from "../constants";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";

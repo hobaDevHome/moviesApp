@@ -25,3 +25,6 @@ dist-ssr
 
 # api keys
 .env
+
+#comments and asks
+tasks

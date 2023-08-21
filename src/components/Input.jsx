@@ -1,5 +1,3 @@
-// @ts-nocheck
-/* eslint-disable react/prop-types */
 import TextField from "@mui/material/TextField";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -29,7 +27,7 @@ const Input = ({ handleSearch }) => {
           }
         }}
         sx={{
-          "paddingRight": 1,
+          paddingRight: 1,
           "& .MuiInputLabel-root": { color: "orange" },
 
           "& .MuiOutlinedInput-root.Mui-focused": {
@@ -73,8 +71,8 @@ const Input = ({ handleSearch }) => {
 export default Input;
 
 const ColorButton = styled(Button)(({ theme }) => ({
-  "color": theme.palette.getContrastText(purple[500]),
-  "backgroundColor": purple[500],
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: purple[500],
   "&:hover": {
     backgroundColor: purple[700],
   },

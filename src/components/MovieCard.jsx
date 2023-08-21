@@ -1,5 +1,3 @@
-// @ts-nocheck
-/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { colors } from "../constants";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
