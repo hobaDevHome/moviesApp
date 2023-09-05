@@ -42,17 +42,17 @@ body {
   outline: none;
 }
 
+.pagination > .active > a {
+  background-color: #fff;
+  border-color: #fff;
+  color: #56ab2f;
+}
+
 .pagination > li:first-child > a,
 .pagination > li:first-child > span,
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
   border-radius: unset;
-}
-
-.pagination > .active > a {
-  background-color: #fff;
-  border-color: #fff;
-  color: #56ab2f;
 }
 
 .pagination > .active > a:hover,
