@@ -35,6 +35,13 @@ body {
   color: #fff;
 }
 
+.pagination > .active > a,
+.pagination > .active > span {
+  background-color: #fff;
+  border-color: #fff;
+  outline: none;
+}
+
 .pagination > li:first-child > a,
 .pagination > li:first-child > span,
 .pagination > li:last-child > a,
@@ -48,8 +55,6 @@ body {
   color: #56ab2f;
 }
 
-.pagination > .active > a,
-.pagination > .active > span,
 .pagination > .active > a:hover,
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
