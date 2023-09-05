@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 0;
 }
+
 body {
   background-color: #181818;
   display: flex;
@@ -20,19 +21,21 @@ body {
   list-style: none;
   outline: none;
 }
-.pagination > .active > a {
-  background-color: #fff;
-  border-color: #fff;
-  color: #56ab2f;
-}
+
 .pagination > li > a {
   border: 1px solid #fff;
   padding: 5px 7px;
   outline: none;
   cursor: pointer;
-
   margin-left: 8px;
 }
+
+.pagination > .active > a {
+  background-color: #fff;
+  border-color: #fff;
+  color: #56ab2f;
+}
+
 .pagination > .active > a,
 .pagination > .active > span,
 .pagination > .active > a:hover,
@@ -43,10 +46,12 @@ body {
   border-color: #fff;
   outline: none;
 }
+
 .pagination > li > a,
 .pagination > li > span {
   color: #fff;
 }
+
 .pagination > li:first-child > a,
 .pagination > li:first-child > span,
 .pagination > li:last-child > a,
