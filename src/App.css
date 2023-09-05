@@ -30,15 +30,15 @@ body {
   margin-left: 8px;
 }
 
+.pagination > li > a,
+.pagination > li > span {
+  color: #fff;
+}
+
 .pagination > .active > a {
   background-color: #fff;
   border-color: #fff;
   color: #56ab2f;
-}
-
-.pagination > li > a,
-.pagination > li > span {
-  color: #fff;
 }
 
 .pagination > .active > a,
@@ -69,7 +69,7 @@ body {
   top: 45%;
   transform: translateY(-50%);
   font-size: 30px;
-  background-color: rgb(255 255 255 / 0.5);
+  background-color: rgb(255 255 255 / 50%);
   border: none;
   cursor: pointer;
   margin: 10px;
@@ -88,5 +88,5 @@ body {
 }
 
 .arrow:hover {
-  background-color: rgb(255 255 255 / 0.8);
+  background-color: rgb(255 255 255 / 80%);
 }
