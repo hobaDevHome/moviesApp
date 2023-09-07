@@ -12,5 +12,8 @@ module.exports = {
   rules: {
     "react-refresh/only-export-components": "warn",
     "react/prop-types": "off",
+    quotes: [2, "double", { avoidEscape: true }],
+    "comma-dangle": ["error", "only-multiline"],
+    semi: [2, "always"],
   },
 };
