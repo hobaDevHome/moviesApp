@@ -1,7 +1,3 @@
-// @ts-nocheck
-// movieSlice.js
-// Async action to fetch movie data
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 

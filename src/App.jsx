@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-no-target-blank */
-// @ts-nocheck
-
 import "./App.css";
 
 import { Routes, Route } from "react-router-dom";
